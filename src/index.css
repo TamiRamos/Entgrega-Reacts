@@ -1,0 +1,50 @@
+/* -------------------- Grid de productos -------------------- */
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem;
+  padding: 0;
+}
+
+/* -------------------- ItemCard -------------------- */
+.item-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.item-card:hover {
+  transform: scale(1.05);
+}
+
+.item-card img {
+  width: 100%;
+  aspect-ratio: 1/1; /* mantiene proporción cuadrada */
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 0.8rem;
+}
+
+.item-card h3 {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.item-card p {
+  font-weight: 600;
+  margin: 0.3rem 0 1rem 0;
+  color: #555;
+}
+
+/* Responsive grid */
+@media (max-width: 768px) {
+  .items-grid {
+    margin: 1rem;
+    gap: 1rem;
+  }
+}
