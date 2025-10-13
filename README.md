@@ -1,75 +1,32 @@
-# React + TypeScript + Vite
+# 🛍️ Entrega 1 - Crea tu Landing (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto corresponde a la **Primera Entrega** del curso de React, donde se construyen los **primeros componentes base** para un e-commerce llamado **Ambar Nails**.  
+El objetivo es comprender la estructura de componentes de React y crear la base visual de la homepage del proyecto.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Objetivos del Proyecto
 
-## React Compiler
+- Comprender los conceptos básicos de React y su estructura de componentes.
+- Construir los primeros componentes reutilizables del e-commerce.
+- Crear una barra de navegación con enlaces, logo y widget de carrito.
+- Renderizar un contenedor principal que reciba props con un mensaje personalizado.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+---
 
-Note: This will impact Vite dev & build performances.
+## 🧩 Componentes desarrollados
 
-## Expanding the ESLint configuration
+### 🔹 `NavBar.jsx`
+- Muestra el **logo** de la tienda y los **enlaces de navegación**.
+- Renderiza dentro de sí al componente `CartWidget`.
+- Forma parte de la estructura principal de la aplicación.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 🔹 `CartWidget.jsx`
+- Representa el ícono del **carrito de compras**.
+- Se integra dentro de `NavBar`.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 🔹 `ItemListContainer.jsx`
+- Es el **contenedor principal del catálogo de productos**.
+- Recibe una **prop (mensaje)** desde `App.jsx` y la muestra en pantalla.
+  ```jsx
+  <ItemListContainer mensaje="¡Bienvenidos a Ambar Nails!" />
