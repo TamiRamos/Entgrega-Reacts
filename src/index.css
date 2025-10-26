@@ -23,7 +23,7 @@
 
 .item-card img {
   width: 100%;
-  aspect-ratio: 1/1; /* mantiene proporción cuadrada */
+  aspect-ratio: 1/1; 
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 0.8rem;
@@ -41,7 +41,7 @@
   color: #555;
 }
 
-/* Responsive grid */
+
 @media (max-width: 768px) {
   .items-grid {
     margin: 1rem;

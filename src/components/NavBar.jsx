@@ -1,18 +1,20 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import CartWidget from "./CartWidget";
-import "../index.css"; // opcional para estilos
+import "../index.css";
 
 const NavBar = () => {
   return (
     <nav className="navbar">
       <div className="logo">
-        <h2>AmbarNails</h2> {/* Si quieres, puedes usar solo texto */}
+        <h2 className="nav-title">AmbarNails</h2>
       </div>
 
       <ul className="nav-links">
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Productos</a></li>
-        <li><a href="#">Contacto</a></li>
+        <li><Link to="/">Inicio</Link></li>
+        <li><Link to="/categoria/esmaltes">Esmaltes</Link></li>
+        <li><Link to="/categoria/accesorios">Accesorios</Link></li>
+        <li><Link to="/categoria/herramientas">Herramientas</Link></li>
       </ul>
 
       <CartWidget />
